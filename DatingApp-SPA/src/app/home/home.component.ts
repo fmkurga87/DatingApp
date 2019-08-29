@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
   cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;
   }
+
+  ngOnInit(): void {
+    throw new Error('Propiedad agregada para que el compilador no rompa los huevos');
+  }
 }

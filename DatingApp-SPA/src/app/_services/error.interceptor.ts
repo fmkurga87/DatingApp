@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpErrorResponse, HttpEvent, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -10,7 +10,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             catchError(error => {
                 if (error instanceof HttpErrorResponse) {
                     if (error.status === 401) {
-                        return throwError(error.statusText);
+                        return throwError('Usuario y/o Contraseña incorrectos');
                     }
                     const applicationError = error.headers.get('Application-Error');
                     if (applicationError) {
@@ -37,4 +37,4 @@ export const ErrorInterceptorProvider = {
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,
     multi: true
-}
+};

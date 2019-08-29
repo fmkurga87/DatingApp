@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ok } from 'assert';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Propiedad agregada para que el compilador no rompa los huevos');
+    return ok('Propiedad agregada para que el compilador no rompa los huevos');
   }
 }

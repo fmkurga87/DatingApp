@@ -21,6 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    return ok('Propiedad agregada para que el compilador no rompa los huevos');
+    return; // Ok('Propiedad agregada para que el compilador no rompa los huevos');
   }
 }
